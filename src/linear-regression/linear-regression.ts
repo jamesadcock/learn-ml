@@ -1,4 +1,3 @@
-// Import the function to display the graph
 import { showGraph } from "../graph";
 
 // Input data: x represents advertising spend, y represents revenue
