@@ -1,8 +1,5 @@
 import { showGraph } from "../graph";
-
-// Input data: x represents advertising spend, y represents revenue
-const x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Advertising Spend in $1000s
-const y = [4, 8, 10, 14, 18, 17, 28, 27, 38, 45, 50]; // Revenue in $1000s
+import { x, y } from "./marketing-data";
 
 // Learning rate controls how much we adjust the weight in each step
 const learningRate = 0.001;
@@ -11,7 +8,7 @@ const learningRate = 0.001;
 const linearRegression = () => {
   let weight = 0; // Start with an initial weight of 0
   let bias = 0; // Start with an initial bias of 0
-  const epochs = 200; // Number of iterations
+  const epochs = 50000; // Number of iterations
 
   for (let epoch = 0; epoch < epochs; epoch++) {
     // Predict y values using the current weight
@@ -37,15 +34,15 @@ const linearRegression = () => {
 };
 
 // Function to calculate the loss (mean squared error)
-const calculateLoss = (actual: number[], predicted: number[]) => {
+const calculateLoss = (groundTruth: number[], predicted: number[]) => {
   let totalError = 0;
 
   // Sum up the squared differences between actual and predicted values
-  for (let i = 0; i < actual.length; i++) {
-    const difference = actual[i] - predicted[i];
+  for (let i = 0; i < groundTruth.length; i++) {
+    const difference = groundTruth[i] - predicted[i];
     totalError += difference ** 2;
   }
-  return totalError / actual.length;
+  return totalError / groundTruth.length;
 };
 
 // Calculate the gradient of the loss function with respect to the weight and bias

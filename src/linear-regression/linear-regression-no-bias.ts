@@ -1,8 +1,5 @@
 import { showGraph } from "../graph";
-
-// Input data: x represents advertising spend, y represents revenue
-const x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Advertising Spend in $1000s
-const y = [4, 8, 10, 14, 18, 17, 28, 27, 38, 45, 50]; // Revenue in $1000s
+import { x, y } from "./marketing-data";
 
 // Learning rate controls how much we adjust the weight in each step
 const learningRate = 0.1;
