@@ -10,9 +10,9 @@ const learningRate = 0.001;
 // Function to perform linear regression
 const linearRegression = () => {
   let weight = 0; // Start with an initial weight of 0
-  const maxEpochs = 200; // Maximum number of iterations
+  const epochs = 200; // Number of iterations
 
-  for (let epoch = 0; epoch < maxEpochs; epoch++) {
+  for (let epoch = 0; epoch < epochs; epoch++) {
     // Predict y values using the current weight
     const predictions = x.map((value) => value * weight);
 
